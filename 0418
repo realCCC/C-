@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(void)
+{
+   int i = 1, input;
+   scanf_s("%d", &input);
+
+   while (i <= input)
+   {
+      i *= 10;
+      printf("%d\n", i);
+      if (i > input) {
+         i /= 10;
+         printf("%d\n", i);
+         break;
+      }
+   }
+
+   while (input >= i && input > 0)
+   {
+      printf("**");
+      input -= i;
+      while (i > input) {
+         printf("\n");
+         i /= 10;
+      }
+   }
+}
